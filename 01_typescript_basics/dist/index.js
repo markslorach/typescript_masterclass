@@ -87,3 +87,49 @@ createPost(newPost);
 let posts = [];
 posts = [newPost];
 console.log(posts);
+function getRandomColour() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+const colourOne = getRandomColour();
+const colourTwo = getRandomColour();
+console.log(colourOne);
+console.log(colourTwo);
+// type User = {
+//   name: string;
+//   score: number;
+// };
+const userOne = { name: "Mark", score: 34 };
+function formatUser(user) {
+    console.log(`${user.name} has a score of ${user.score}`);
+}
+formatUser(userOne);
+// UNION TYPES
+//Union types are used when a value can be more than a single type. Such as when a property would be string or number.
+let someId;
+someId = 9;
+someId = "Mark";
+let email = null;
+email = "hello@markslorach.com";
+email = null;
+function swapIdType(id) {
+    if (typeof id === "string") {
+        return parseInt(id);
+    }
+    else {
+        return id.toString();
+    }
+}
+const idOne = swapIdType(1);
+const idTwo = swapIdType("2");
+console.log(idOne, idTwo);
+function logDetails(value) {
+    if (value.type === "user") {
+        console.log(value.email, value.username);
+    }
+    if (value.type === "person") {
+        console.log(value.firstName, value.age);
+    }
+}
